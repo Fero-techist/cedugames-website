@@ -26,8 +26,6 @@ const Home = () => {
           Start game
         </button>
       </div>
-      {/* 
-      {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} */}
     </div>
   );
 };

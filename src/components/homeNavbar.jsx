@@ -1,19 +1,23 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavItem from "./NavItem";
 import Badge from "./Badge";
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: "Home", to: "/home" },
+    { label: "Home", to: "/age-selection/little-explore/math" },
     { label: "Leaderboard", to: "/leaderboard" },
     { label: "Shop", to: "/shop" },
     { label: "Profile", to: "/profile" },
   ];
 
   const isWhiteBackground =
-    location.pathname === "/leaderboard" || location.pathname === "/shop";
+    location.pathname === "/leaderboard" ||
+    location.pathname === "/shop" ||
+    location.pathname === "/profile" ||
+    location.pathname === "/notifications";
   const textColor = isWhiteBackground ? "text-[#000000]" : "text-white";
   const bgClass = isWhiteBackground
     ? "bg-white"
@@ -21,7 +25,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`w-full ${bgClass} px-8 py-3 flex items-center justify-between rounded-xl`}
+      className={`w-full ${bgClass} px-8 py-3 shadow-xl   flex items-center justify-between rounded-xl`}
     >
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-500 text-white">
@@ -30,7 +34,7 @@ export default function Navbar() {
 
         <div>
           <p
-            className={`${textColor} text-sm font-medium flex items-center gap-1`}
+            className={`${textColor} text-sm   font-medium flex items-center gap-1`}
           >
             Player 123
             <span className="text-xs">✔</span>
@@ -63,6 +67,7 @@ export default function Navbar() {
 
         <div
           className={`w-10 h-10 flex items-center justify-center rounded-full ${isWhiteBackground ? "bg-gray-200" : "bg-white/20"} ${textColor} cursor-pointer`}
+          onClick={() => navigate("/notification")}
         >
           🔔
         </div>

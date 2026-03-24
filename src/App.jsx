@@ -8,10 +8,11 @@ import AgeSelection from "./pages/selection/ageSelection";
 import LeaderBoard from "./pages/games/leaderboard";
 import Shop from "./pages/games/shop";
 import ResetPassword from "./pages/auth/resetPassword";
+import Profile from "./pages/games/profile";
 import LittleExploere from "./pages/selection/LittleExploere";
 import Home from "./pages/games/home";
-
 import ForgotPassword from "./pages/auth/forgotPassword";
+import Notifications from "./pages/games/notification";
 function App() {
   return (
     <>
@@ -80,8 +81,18 @@ function App() {
           />
 
           <Route
+            path="/profile"
+            element={<Profile />}
+          />
+
+          <Route
             path="/shop"
             element={<Shop />}
+          />
+
+          <Route
+            path="/notification"
+            element={<Notifications />}
           />
         </Routes>
       </BrowserRouter>

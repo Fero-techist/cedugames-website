@@ -1,5 +1,9 @@
 import React from "react";
 import Navbar from "../../components/homeNavbar";
+import LeaderboardIcon from "../../assets/leaderboard.png";
+import Alex from "../../assets/userone.png";
+import Sophie from "../../assets/usertwo.png";
+import Ryan from "../../assets/userthree.png";
 
 const users = [
   {
@@ -7,6 +11,7 @@ const users = [
     name: "Alex Martinez",
     level: 45,
     points: "12,450",
+    avatar: Alex,
     rank: 1,
     bg: "bg-yellow-100",
     badge: "bg-yellow-500",
@@ -16,6 +21,7 @@ const users = [
     name: "Sophie Anderson",
     level: 42,
     points: "11,890",
+    avatar: Sophie,
     rank: 2,
     bg: "bg-gray-100",
     badge: "bg-gray-400",
@@ -25,6 +31,7 @@ const users = [
     name: "Ryan Thompson",
     level: 40,
     points: "10,567",
+    avatar: Ryan,
     rank: 3,
     bg: "bg-orange-100",
     badge: "bg-orange-500",
@@ -36,10 +43,15 @@ export default function Leaderboard() {
     <div>
       <Navbar />
       <div className="min-h-screen bg-gray-200 flex items-center justify-center p-6">
-        <div className="w-full max-w-5xl bg-white rounded-2xl p-8 shadow-sm">
-          {/* Top 3 Section */}
-          <div className="flex justify-center items-end gap-6 mb-10">
-            {/* 2nd */}
+        <div className="w-full max-w-7xl bg-white rounded-2xl p-8 shadow-sm">
+          <div className="flex justify-center mb-8">
+            <img
+              src={LeaderboardIcon}
+              alt="Leaderboard"
+              className="w-full max-w-2xl"
+            />
+          </div>
+          {/* <div className="flex justify-center items-end gap-6 mb-10">
             <div className="flex flex-col items-center">
               <div className="w-40 h-32 bg-blue-200 rounded-md flex items-center justify-center text-center">
                 <div>
@@ -50,7 +62,6 @@ export default function Leaderboard() {
               </div>
             </div>
 
-            {/* 1st */}
             <div className="flex flex-col items-center">
               <div className="w-44 h-40 bg-purple-200 rounded-md flex items-center justify-center text-center shadow">
                 <div>
@@ -61,7 +72,6 @@ export default function Leaderboard() {
               </div>
             </div>
 
-            {/* 3rd */}
             <div className="flex flex-col items-center">
               <div className="w-36 h-28 bg-orange-200 rounded-md flex items-center justify-center text-center">
                 <div>
@@ -71,7 +81,7 @@ export default function Leaderboard() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Users List */}
           <h3 className="text-sm font-semibold text-gray-700 mb-4">
@@ -90,6 +100,11 @@ export default function Leaderboard() {
                   >
                     {user.rank}
                   </div>
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
 
                   <div>
                     <p className="text-sm font-semibold">{user.name}</p>

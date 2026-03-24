@@ -10,6 +10,8 @@ import Green from "../src/assets/green.png";
 import one from "../src/assets/1.png";
 import two from "../src/assets/2.png";
 import four from "../src/assets/4.png";
+import five from "../src/assets/5.png";
+
 const questions = [
   {
     id: 1,
@@ -39,13 +41,13 @@ const questions = [
 
   {
     id: 3,
-    text: "Which animal is a cat?",
-    image: "/cat.png",
+    text: "Select the option with 5 apples",
+    image: questinaire,
     shape: null,
     options: [
       { image: one, bg: "bg-[#F3E8D7]", correct: false },
-      { image: two, bg: "bg-[#EDE7E3]", correct: true },
-      { image: "/rabbit.png", bg: "bg-[#DCEAF3]", correct: false },
+      { image: two, bg: "bg-[#EDE7E3]", correct: false },
+      { image: five, bg: "bg-[#DCEAF3]", correct: true },
       { image: four, bg: "bg-[#F3E1C7]", correct: false },
     ],
   },
