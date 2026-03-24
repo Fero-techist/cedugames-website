@@ -1,0 +1,34 @@
+import BG from "../../assets/Group 28.png";
+import Navbar from "../../components/homeNavbar";
+import { Navigate, useNavigate } from "react-router-dom";
+
+const Home = () => {
+  // const [showQuiz, setShowQuiz] = useState(false);
+
+  const navigate = useNavigate();
+
+  return (
+    <div
+      className="min-h-screen flex flex-col text-white"
+      style={{
+        backgroundImage: `url(${BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <Navbar />
+
+      <div className="flex-1 flex flex-col justify-end items-center mt-40">
+        <button
+          onClick={() => navigate("/quiz")}
+          className="text-white cursor-pointer shadow-xl w-72 my-6 flex justify-center items-center bg-[#9B5DE5] hover:bg-[#8B4FD9] hover:shadow-2xl py-3 px-4 rounded-2xl transition-all duration-300"
+        >
+          Start game
+        </button>
+      </div>
+      {/* 
+      {showQuiz && <Quiz onClose={() => setShowQuiz(false)} />} */}
+    </div>
+  );
+};
+export default Home;
