@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import NavItem from "./NavItem";
-import Badge from "./Badge";
-
+import Badge from "./badge";
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
