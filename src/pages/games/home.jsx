@@ -3,8 +3,6 @@ import Navbar from "../../components/homeNavbar";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  // const [showQuiz, setShowQuiz] = useState(false);
-
   const navigate = useNavigate();
 
   return (
@@ -25,6 +23,10 @@ const Home = () => {
         >
           Start game
         </button>
+      </div>
+
+      <div>
+        <button onClick={() => navigate("/quiz")}></button>
       </div>
     </div>
   );
